@@ -21,7 +21,7 @@ if(mysqli_num_rows($result))
 
     echo '<h2>Error Code: ',$status.'</h2>';
 
-    $query = 'DELETE FROM words
+    $query = 'DELETE FROM page_word
         WHERE page_id = "'.$page['id'].'"';
     mysqli_query($connect, $query);
 
@@ -53,19 +53,45 @@ if(mysqli_num_rows($result))
 
             $word = mysqli_real_escape_string($connect, $word);
 
-            $query = 'INSERT INTO words (
-                    word, 
-                    count,
-                    page_id
+            $query = 'SELECT *
+                FROM words
+                WHERE word = "'.$word.'"
+                LIMIT 1';
+            $result = mysqli_query($connect, $query);
+
+            if(!mysqli_num_rows($result))
+            {
+
+                $query = 'INSERT INTO words (
+                        word
+                    ) VALUES (
+                        "'.$word.'"
+                    )';
+                mysqli_query($connect, $query);
+
+                $query = 'SELECT *
+                    FROM words
+                    WHERE word = "'.$word.'"
+                    LIMIT 1';
+                $result = mysqli_query($connect, $query);
+
+            }
+
+            $word = mysqli_fetch_assoc($result);
+
+            $query = 'INSERT INTO page_word (
+                    word_id,
+                    page_id,
+                    count
                 ) VALUES (
-                    "'.$word.'",
-                    "'.$count.'",
-                    "'.$page['id'].'"
+                    "'.$word['id'].'",
+                    "'.$page['id'].'",
+                    "'.$count.'"
                 )';
             mysqli_query($connect, $query);
 
-            echo $query;
             echo '<hr>';
+            echo $query;
 
         }
         

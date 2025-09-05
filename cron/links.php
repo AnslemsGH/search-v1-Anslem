@@ -4,6 +4,8 @@ include('../includes/connect.php');
 include('../includes/config.php');
 include('../includes/functions.php');
 
+// DELETE FROM pages WHERE id > 1
+
 $query = 'SELECT *
     FROM pages
     ORDER BY linked_at ASC
@@ -57,18 +59,23 @@ if(mysqli_num_rows($result))
 
                     $query = 'INSERT INTO pages (
                             url, 
+                            page_id,
                             linked_at,
                             scrapped_at,
                             created_at, 
                             updated_at
                         ) VALUES (
                             "'.$link.'",
+                            "'.$page['id'].'",
                             NULL,
                             NULL,
                             NOW(),
                             NOW()
                         )';
                     mysqli_query($connect, $query);
+
+                    echo '<hr>';
+                    echo $query;
 
                 }
 
