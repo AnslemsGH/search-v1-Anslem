@@ -16,6 +16,20 @@ include('includes/header.php');
 
 <?php 
 
+$query = 'SELECT COUNT(*) AS total FROM pages';
+$result = mysqli_query($connect, $query);
+$page = mysqli_fetch_assoc($result);
+echo '<p>Total Pages: '.$page['total'].'</p>';
+
+$query = 'SELECT COUNT(*) AS total FROM words';
+$result = mysqli_query($connect, $query);
+$page = mysqli_fetch_assoc($result);
+echo '<p>Total Keywords: '.$page['total'].'</p>';
+
+?>
+
+<?php 
+
 $query = 'SELECT *,(
         SELECT GROUP_CONCAT(word SEPARATOR ", ")
         FROM words
