@@ -9,6 +9,30 @@ function clean_url($url)
     
 }
 
+function html_fetch_words($html)
+{
+
+    $text = strip_tags($html);
+    $text = html_entity_decode($text);
+
+    $text = strtolower($text);
+
+    $text = preg_replace('/[^\w\s]/', ' ', $text);
+
+    $words = preg_split('/\s+/', $text);
+
+    $words = array_filter($words, function($word) {
+        return strlen($word) >= 3;
+    });
+
+    $frequencies = array_count_values($words);
+
+    arsort($frequencies);
+
+    return $frequencies;
+
+}
+
 function html_fetch_title($html)
 {
 

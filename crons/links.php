@@ -58,18 +58,17 @@ if(mysqli_num_rows($result))
                     $query = 'INSERT INTO pages (
                             url, 
                             linked_at,
+                            scanned_at,
                             created_at, 
                             updated_at
                         ) VALUES (
                             "'.$link.'",
                             NULL,
+                            NULL,
                             NOW(),
                             NOW()
                         )';
                     mysqli_query($connect, $query);
-
-                    echo $query;
-                    echo '<hr>';
 
                 }
 
