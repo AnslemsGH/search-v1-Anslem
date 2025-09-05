@@ -1,9 +1,9 @@
-# Parts V2
+# Search V1
 
-This application will provide a directory of LEGO® colours, parts, and sets. Quite similar to [Brick Owl](https://www.brickowl.com/) and [Rebrickable](https://rebrickable.com/). The app will collect the original data from the [Rebrickable API](https://rebrickable.com/api/).
+This application will provide a seach engine experience for BrickMMO and CodeAdam assets. 
 
 > The live website is available at:  
-> https://parts.brickmmo.com
+> https://search.brickmmo.com
 
 ---
 
@@ -17,7 +17,7 @@ This application will intentionally be written in a simplified structure with a 
 
 ## Repo Resources
 
-- [Parts](https://parts.brickmmo.com)
+- [Search](https://search.brickmmo.com)
 - [PHP](https://php.net)
 - [BrickMMO](https://brickmmo.com)
 
