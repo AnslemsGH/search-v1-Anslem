@@ -58,7 +58,7 @@ if(mysqli_num_rows($result))
                     $query = 'INSERT INTO pages (
                             url, 
                             linked_at,
-                            scanned_at,
+                            scrapped_at,
                             created_at, 
                             updated_at
                         ) VALUES (

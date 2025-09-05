@@ -10,9 +10,9 @@ include('includes/header.php');
 
 ?>
 
-<h1>Search</h1>
+<h1>Search Results</h1>
 
-<p>This will be your search page.</p>
+<p>This will be your search results page.</p>
 
 <ul>
     <li><a href="index.php">Home</a></li>
