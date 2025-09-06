@@ -12,8 +12,6 @@ include('includes/header.php');
 
 <h1>All Search Records</h1>
 
-<p>Here is a dump pf alll pages and keywords in the database:</p>
-
 <?php 
 
 $query = 'SELECT COUNT(*) AS total FROM pages';
@@ -28,12 +26,16 @@ echo '<p>Total Keywords: '.$page['total'].'</p>';
 
 ?>
 
+<p>Here is a dump pf alll pages and keywords in the database:</p>
+
 <?php 
 
 $query = 'SELECT *,(
         SELECT GROUP_CONCAT(word SEPARATOR ", ")
         FROM words
-        WHERE words.page_id = pages.id
+        INNER JOIN page_word
+        ON word_id = words.id
+        WHERE page_word.page_id = pages.id
     ) AS words
     FROM pages
     ORDER BY scrapped_at DESC';
