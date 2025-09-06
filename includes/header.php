@@ -20,17 +20,10 @@
         <nav class="w3-row w3-section">
             <div class="w3-col s6 w3-left-align">
                 <a href="<?=SITE_URL?>" style="font-size: 180%;">
-                    BrickMMO Parts
+                    BrickMMO Search
                 </a>
             </div>
-            <div class="w3-col s6 w3-right-align">
-                <form class="d-flex">
-                    <input class="w3-input w3-border" type="search" style="display: inline-block; margin-right: 8px; width: auto;">
-                    <button class="w3-button w3-red" style="display: inline-block;" type="submit">
-                        Search
-                    </button>
-                </form>
-            </div>
+            <div class="w3-col s6 w3-right-align"></div>
         </nav>
 
         <hr>
