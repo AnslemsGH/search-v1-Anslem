@@ -9,6 +9,27 @@ function clean_url($url)
     
 }
 
+function get_redirect_url($url)
+{
+
+    $headers = @get_headers($url, 1);
+
+    if ($headers && isset($headers['Location'])) 
+    {
+        
+        if (is_array($headers['Location'])) 
+        {
+            return end($headers['Location']);
+        }
+        
+        return $headers['Location'];
+
+    }
+
+    return false;
+    
+}
+
 function html_fetch_words($html)
 {
 
