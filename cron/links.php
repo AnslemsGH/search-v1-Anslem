@@ -8,7 +8,7 @@ include('../includes/functions.php');
 
 $query = 'SELECT *
     FROM pages
-    WHERE id = 302
+    -- WHERE id = 302
     ORDER BY linked_at ASC
     LIMIT 1';
 $result = mysqli_query($connect, $query);
