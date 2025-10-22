@@ -19,7 +19,7 @@ include('includes/header.php');
 
  if($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['param'])){
     $search = $_GET['param'];
-    $query = "SELECT DISTINCT title, url FROM pages p JOIN page_word pw ON p.id = pw.page_id JOIN words w ON pw.word_id=w.id WHERE w.word LIKE '%$search%'";
+    $query = "SELECT DISTINCT title, url,  COUNT(word) AS hit_count FROM pages p JOIN page_word pw ON p.id = pw.page_id JOIN words w ON pw.word_id=w.id WHERE w.word LIKE '%$search%' GROUP BY p.title, p.url ORDER BY hit_count DESC";
     $result = mysqli_query($connect, $query);
 
     if (mysqli_num_rows($result) > 0) {
@@ -35,7 +35,6 @@ include('includes/header.php');
         echo '<p>No results found for "<strong>' . htmlspecialchars($search) . '</strong>".</p>';
     }
 
-    //SORT OUT AS PER HIGHEST HIT COUNT yes
 }
 
 ?>
