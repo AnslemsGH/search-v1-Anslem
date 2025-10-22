@@ -35,7 +35,7 @@ include('includes/header.php');
         echo '<p>No results found for "<strong>' . htmlspecialchars($search) . '</strong>".</p>';
     }
 
-    //SORT OUT AS PER HIGHEST HIT COUNT
+    //SORT OUT AS PER HIGHEST HIT COUNT yes
 }
 
 ?>
