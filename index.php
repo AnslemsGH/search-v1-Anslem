@@ -14,6 +14,11 @@ include('includes/header.php');
 
 <p>This will be your search page.</p>
 
+<form action="results.php" method="GET">
+    <input type="text" name="param" placeholder="Search...">
+    <input type="submit" name="submit_search" value="Search">
+</form>
+
 <ul>
     <li><a href="index.php">Home</a></li>
     <li><a href="results.php">Results</a></li>
