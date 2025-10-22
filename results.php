@@ -16,6 +16,11 @@ include('includes/header.php');
 
 <?php
 
+echo '<form action="results.php" method="GET">
+    <input type="text" name="param" placeholder="Search...">
+    <input type="submit" name="submit_search" value="Search">
+    </form><br>';
+
 
  if($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['param'])){
     $search = $_GET['param'];
