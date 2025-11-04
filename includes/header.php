@@ -12,8 +12,10 @@
 
     <link rel="stylesheet" href="https://cdn.brickmmo.com/exceptions@1.0.0/fontawesome.css">
 
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <main>
 
     <div class="w3-container" style="max-width: 1400px; margin: auto;">
 

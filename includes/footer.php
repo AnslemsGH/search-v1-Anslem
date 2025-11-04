@@ -15,5 +15,6 @@
     <script src="https://cdn.brickmmo.com/bar@1.0.0/bar.js"></script>
     <script src="https://kit.fontawesome.com/a74f41de6e.js" crossorigin="anonymous"></script>
 
+</main>
 </body>
 </html>

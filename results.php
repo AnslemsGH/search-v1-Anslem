@@ -10,15 +10,16 @@ include('includes/header.php');
 
 ?>
 
+
 <h1>Search Results</h1>
 
-<p>This will be your search results page.</p>
+<!-- <p>This will be your search results page.</p> -->
 
 <?php
 
-echo '<form action="results.php" method="GET">
+echo '<form action="results.php" method="GET" class="search-bar">
     <input type="text" name="param" placeholder="Search...">
-    <input type="submit" name="submit_search" value="Search">
+    <input type="submit" name="submit_search" value="Search" class="search-button">
     </form><br>';
 
 
@@ -46,8 +47,8 @@ echo '<form action="results.php" method="GET">
 
 <ul>
     <li><a href="index.php">Home</a></li>
-    <li><a href="results.php">Results</a></li>
-    <li><a href="dump.php">Dump</a></li>
+    <!-- <li><a href="results.php">Results</a></li>
+    <li><a href="dump.php">Dump</a></li> -->
 </ul>
 
 <?php include('includes/footer.php'); ?>
