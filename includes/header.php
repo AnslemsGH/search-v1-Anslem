@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <main>
 
     <div class="w3-container" style="max-width: 1400px; margin: auto;">
 
@@ -27,6 +26,7 @@
             </div>
             <div class="w3-col s6 w3-right-align"></div>
         </nav>
+
 
         <hr>
     
